@@ -257,6 +257,7 @@ class Ofx
             $transaction->amount = Utils::createAmountFromStr($t->TRNAMT);
             $transaction->uniqueId = (string)$t->FITID;
             $transaction->name = (string)$t->NAME;
+            $t->MEMO = str_replace('&', 'e', (string)$t->MEMO);
             $transaction->memo = (string)$t->MEMO;
             $transaction->sic = $t->SIC;
             $transaction->checkNumber = $t->CHECKNUM;
